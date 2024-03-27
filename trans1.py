@@ -12,7 +12,7 @@ client = OpenAI()
 input_file_path = 'arg_quality_rank_30k.csv'
 output_file_path = 'rowprocessed1.csv'
 
-token_count=241176
+token_count=1792185    #总共消耗token 1792185
 
 def trans(text):
     global token_count
@@ -38,7 +38,7 @@ with open(input_file_path, mode='r', newline='', encoding='utf-8') as infile, \
     
     # 遍历源文件中的每一行，但只处理前100行
     for i, row in enumerate(reader):
-         if 20000> i >= 11391:  # 只处理前100行
+         if 20000> i >= 18088:  # 只处理前100行
         # 取前两列
             first_two_columns = row[:2]
             # 对这两列的数据进行翻译

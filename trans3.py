@@ -12,7 +12,7 @@ client = OpenAI()
 input_file_path = 'arg_quality_rank_30k.csv'
 output_file_path = 'rowprocessed3.csv'
 
-token_count=66776
+token_count=88762                            #最终消耗88762token
 
 def trans(text):
     global token_count
