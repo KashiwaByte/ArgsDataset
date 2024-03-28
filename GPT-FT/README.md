@@ -28,9 +28,12 @@
 详见[prompt](prompt.ipynb)
 
 
+
 ## 训练结果
+消耗1237536个token，花费了将近10$,loss在2.54左右，花费时间1.5h
+![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240328223714.png)
 
-
+![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240328223656.png)
 ![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240328222546.png)
 
 ![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240328222532.png)
