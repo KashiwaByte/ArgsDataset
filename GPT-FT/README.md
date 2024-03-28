@@ -2,10 +2,10 @@
 以下是本人的GPT微调实操指南
 
 ### 1.提示词优化与确认
-反复尝试获取最优场景提示词。
+反复尝试获取最优场景提示词。详见[prompt](prompt.ipynb)
 
 ### 2.数据集生成
-将原始数据集处理成jsonl格式。
+将原始数据集处理成jsonl格式。详见[gpt_test](gpt_test.jsonl)
 
 ### 3.检测与估算价格
 通过官方提供的数据集格式检测代码与估算代码对数据集进行检测与微调价格评估。详见[format_val](format_val.ipynb)
@@ -19,8 +19,21 @@
 ### 5.设置参数开始训练
 设置好需要的参数，包括模型，训练轮次，数据集以及后缀，然后就开始训练。详见[gpt_finetune](gpt_finetune.py)
 
+中间过程在[step_metrics](step_metrics.csv)
 
 ![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240328201118.png)
+
+### 6.调用新模型使用
+将模型参数换为训练好的新模型然后进行测试
+详见[prompt](prompt.ipynb)
+
+
+## 训练结果
+
+
+![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240328222546.png)
+
+![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240328222532.png)
 
 ## File
 
