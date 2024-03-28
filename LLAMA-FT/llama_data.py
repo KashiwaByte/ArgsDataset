@@ -2,7 +2,7 @@ import csv
 import json
 
 csv_file = 'set/test.csv'
-jsonl_file = 'LLAMA-FT/spark_test.jsonl'
+jsonl_file = 'LLAMA-FT/llama_test.jsonl'
 
 # 生成JSONL文件
 messages = []
