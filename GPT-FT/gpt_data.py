@@ -1,8 +1,8 @@
 import csv
 import json
 
-csv_file = 'set/train.csv'
-jsonl_file = 'GPT-FT/gpt_train.jsonl'
+csv_file = 'set/dev.csv'
+jsonl_file = 'GPT-FT/gpt_dev.jsonl'
 
 # 生成JSONL文件
 messages = []
@@ -21,4 +21,5 @@ with open(csv_file, 'r', encoding='utf-8') as file:
 # 保存为JSONL文件
 with open(jsonl_file, 'w', encoding='utf-8') as file:
     for message in messages:
-        file.write(str(message)+'\n')
+        file.write(json.dumps(message, ensure_ascii=False) + '\n')
+        
