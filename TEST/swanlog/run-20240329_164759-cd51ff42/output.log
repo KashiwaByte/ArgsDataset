@@ -1,0 +1,5 @@
+SwanLab INFO [2024-03-29 16:48:00,860] Experiment AQ_Dev_T0_GPT_Mar29_16-47-59 has been registered.
+SwanLab INFO [2024-03-29 16:48:00,861] Run data will be saved locally in D:\argsdata\TEST\swanlog\run-20240329_164759-cd51ff42
+SwanLab INFO [2024-03-29 16:48:00,862] Experiment_name: AQ_Dev_T0_GPT_Mar29_16-47-59
+SwanLab INFO [2024-03-29 16:48:00,862] Run `swanlab watch` to view SwanLab Experiment Dashboard
+SwanLab ERROR [2024-03-29 16:56:19,397] Error happended while training, SwanLab will throw it

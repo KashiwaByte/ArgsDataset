@@ -1,0 +1,6 @@
+1 [SwanLab-INFO]:        Experiment AQ_Dev_GPT_FT_Mar29_11-49-21 has been registered.
+2 [SwanLab-INFO]:        Run data will be saved locally in D:\argsdata\TEST\swanlog\run-20240329_114921-207b4463
+3 [SwanLab-INFO]:        Experiment_name: AQ_Dev_GPT_FT_Mar29_11-49-21
+4 [SwanLab-INFO]:        Run `swanlab watch` to view SwanLab Experiment Dashboard
+5 [SwanLab-WARNING]:     Data 0.810377 ANALYSIS: The argument provides a clear reason why the blockade in Gaza should not be lifted, stating that the conflict has no end in sight and no one will be safe until the underlying issues are resolved. This reasoning is relevant to the topic and presents a valid consideration for maintaining the blockade. However, the argument could be strengthened by providing more evidence or examples to support the claim that lifting the blockade would not lead to safety until the broader issues are addressed. on tag score cannot be converted, SwanLab will ignore it, but the chart still exists.
+6 [SwanLab-ERROR]:       Error happended while training, SwanLab will throw it

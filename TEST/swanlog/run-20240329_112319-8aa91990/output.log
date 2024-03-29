@@ -1,0 +1,6 @@
+SwanLab INFO [2024-03-29 11:23:21,179] Experiment ArgQuality_GPT_FT_Mar29_11-23-19 has been registered.
+SwanLab INFO [2024-03-29 11:23:21,181] Run data will be saved locally in D:\argsdata\TEST\swanlog\run-20240329_112319-8aa91990
+SwanLab INFO [2024-03-29 11:23:21,181] Experiment_name: ArgQuality_GPT_FT_Mar29_11-23-19
+SwanLab INFO [2024-03-29 11:23:21,181] Run `swanlab watch` to view SwanLab Experiment Dashboard
+SwanLab WARNING [2024-03-29 11:41:51,791] Data 0.762222}, on tag score cannot be converted, SwanLab will ignore it, but the chart still exists.
+SwanLab ERROR [2024-03-29 11:41:51,808] Error happended while training, SwanLab will throw it

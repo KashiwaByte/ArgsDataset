@@ -1,0 +1,10 @@
+2024-03-29 11:54:28.405057
+<class 'ValueError'>
+ValueError("could not convert string to float: '0.810377 ANALYSIS: The argument provides a clear reason why the blockade in Gaza should not be lifted, stating that the conflict has no end in sight and no one will be safe until the underlying issues are resolved. This reasoning is relevant to the topic and presents a valid consideration for maintaining the blockade. However, the argument could be strengthened by providing more evidence or examples to support the claim that lifting the blockade would not lead to safety until the broader issues are addressed.'")
+  File "D:\argsdata\TEST\ft_gpt3.5_test.py", line 58, in <module>
+    loss(label_score=label_score,score=score,i=i)
+
+  File "D:\argsdata\TEST\ft_gpt3.5_test.py", line 25, in loss
+    MAE_loss = abs(float(label_score)-float(score))
+
+
