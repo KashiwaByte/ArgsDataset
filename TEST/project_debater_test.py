@@ -4,7 +4,7 @@ import time
 import cmath
 from debater_python_api.api.debater_api import DebaterApi
 
-csv_file = 'dev.csv'
+csv_file = 'en_dev.csv'
         
 
 debater_api = DebaterApi('58196082476caf02520157c9d8f4feefL05')
@@ -13,7 +13,7 @@ argument_quality_client = debater_api.get_argument_quality_client()
 AE = 0
 SE = 0
 
-swanlab.init(experiment_name="AQ_dev_PD")
+swanlab.init(experiment_name="AQ_en_dev_PD")
 def loss(label_score,score,i):
     global AE
     global SE
