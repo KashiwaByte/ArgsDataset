@@ -87,13 +87,14 @@ with open(csv_file, 'r', encoding='utf-8') as file:
 
             SparkApi.main(appid,api_key,api_secret,Spark_url,domain,text)
             score = SparkApi.answer
-            if quality_type(score)!=quality_type(label_score):
-                LWrong+=1
             try:
                 float(score)
             except ValueError:
                 score = label_score
                 wrong += 1
+            if quality_type(score)!=quality_type(label_score):
+                LWrong+=1
+       
             SparkApi.answer=""
             loss(label_score=label_score,score=score,i=i,wrong=wrong)
             swanlab.log({"wrong_time":wrong})

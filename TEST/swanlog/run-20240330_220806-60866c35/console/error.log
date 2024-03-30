@@ -1,0 +1,10 @@
+2024-03-30 22:10:05.734680
+<class 'ValueError'>
+ValueError("could not convert string to float: ''")
+  File "D:\argsdata\TEST\ft_spark3.0_test.py", line 90, in <module>
+    if quality_type(score)!=quality_type(label_score):
+
+  File "D:\argsdata\TEST\ft_spark3.0_test.py", line 33, in quality_type
+    if float(score)<=0.3:
+
+
