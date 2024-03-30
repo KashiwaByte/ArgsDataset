@@ -2,29 +2,30 @@ import swanlab
 import csv
 import time
 
-csv_file = 'test.csv'
+csv_file = 'dev.csv'
         
 
-import SparkApi
+import OpenllmApi
 #以下密钥信息从控制台获取
 appid = "51bb5f32"     #填写控制台中获取的 APPID 信息
 api_secret = "ZDA5MDZjZWY0YzE5NmY3MWNjNTQ4YWMz"   #填写控制台中获取的 APISecret 信息
 api_key ="bfd094c6b2feb6dbf9bfe3bba6954f76"    #填写控制台中获取的 APIKey 信息
 
 #调用微调大模型时，设置为“patch”
-domain = "patchv3"
+domain = "xsinternlm2x7bchat"
+# domain = "patchv3"
 # domain = "generalv3"
 
 #云端环境的服务地址
-Spark_url = "wss://spark-api-n.xf-yun.com/v3.1/chat"  # 微调v3.0环境的地址
-# Spark_url = "wss://spark-api.xf-yun.com/v3.1/chat"   #通用v3.0地址
+# Spark_url = "wss://spark-api-n.xf-yun.com/v3.1/chat"  # 微调v3.0环境的地址
+Spark_url = "wss://xingchen-api.cn-huabei-1.xf-yun.com/v1.1/chat"   #微调开源大模型地址
 
 
 token = 0
 AE = 0
 SE = 0
 wrong = 0
-swanlab.init(experiment_name="AQ_test_Spark_FT2")
+swanlab.init(experiment_name="AQ_dev_internllm_FT")
 def loss(label_score,score,i,wrong):
     global AE
     global SE
@@ -61,14 +62,17 @@ with open(csv_file, 'r', encoding='utf-8') as file:
                     }]
             
 
-            SparkApi.main(appid,api_key,api_secret,Spark_url,domain,text)
-            score = SparkApi.answer
-            try:
-                float(score)
-            except ValueError:
-                score = label_score
-                wrong += 1
-            SparkApi.answer=""
+            OpenllmApi.main(appid,api_key,api_secret,Spark_url,domain,text)
+            score = OpenllmApi.answer
+            if i>0:
+                try:
+                    float(score)
+                except ValueError:
+                    score = label_score
+                    wrong += 1
+            if i==0:
+                score=0.5
+            OpenllmApi.answer=""
             loss(label_score=label_score,score=score,i=i,wrong=wrong)
             swanlab.log({"wrong_time":wrong})
             # time.sleep(1)

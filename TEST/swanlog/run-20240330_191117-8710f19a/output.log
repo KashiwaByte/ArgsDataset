@@ -1,0 +1,5 @@
+SwanLab INFO [2024-03-30 19:11:18,816] Experiment AQ_test_Spark_FT2_Mar30_19-11-17 has been registered.
+SwanLab INFO [2024-03-30 19:11:18,817] Run data will be saved locally in D:\argsdata\TEST\swanlog\run-20240330_191117-8710f19a
+SwanLab INFO [2024-03-30 19:11:18,817] Experiment_name: AQ_test_Spark_FT2_Mar30_19-11-17
+SwanLab INFO [2024-03-30 19:11:18,818] Run `swanlab watch` to view SwanLab Experiment Dashboard
+SwanLab INFO [2024-03-30 19:47:49,553] The current experiment AQ_test_Spark_FT2_Mar30_19-11-17 has been completed, SwanLab will close it automatically
