@@ -23,22 +23,46 @@ Spark_url = "wss://spark-api-n.xf-yun.com/v3.1/chat"  # 微调v3.0环境的地�
 token = 0
 AE = 0
 SE = 0
+LAE = 0
+LSE = 0
+LWrong = 0
 wrong = 0
-swanlab.init(experiment_name="AQ_test_Spark_FT2")
+swanlab.init(experiment_name="AQ_Ltest_Spark_FT2")
+
+def quality_type(score):
+    if float(score)<=0.3:
+        return -1
+    if 0.3<float(score)<=0.7:
+        return 0
+    if float(score)>0.7:
+        return 1
+    
 def loss(label_score,score,i,wrong):
     global AE
     global SE
+    global LAE
+    global LSE
     swanlab.log({"lable_score":label_score,"score":score})
     MAE_loss = abs(float(label_score)-float(score))
+    LAE_loss =abs(quality_type(label_score)-quality_type(score))
     AE += MAE_loss
+    LAE += LAE_loss
     MAE = AE/(i+1-wrong)
+    MLAE = LAE/(i+1-wrong)
     swanlab.log({"MAE":MAE})
+    swanlab.log({"MLAE":MLAE})
     MSE_loss = pow(float(label_score)-float(score),2)
+    LSE_loss = pow(quality_type(label_score)-quality_type(score),2)
     SE += MSE_loss
+    LSE += LSE_loss
     MSE = SE/(i+1-wrong)
+    MLSE = LSE/(i+1-wrong)
     RMSE = MSE**0.5
+    RMLSE = MLSE**0.5
     swanlab.log({"MSE":MSE})
+    swanlab.log({"MSE":MLSE})
     swanlab.log({"RMSE":RMSE})
+    swanlab.log({"RMLSE":RMLSE})
     
 
 with open(csv_file, 'r', encoding='utf-8') as file:
@@ -63,6 +87,8 @@ with open(csv_file, 'r', encoding='utf-8') as file:
 
             SparkApi.main(appid,api_key,api_secret,Spark_url,domain,text)
             score = SparkApi.answer
+            if quality_type(score)!=quality_type(label_score):
+                LWrong+=1
             try:
                 float(score)
             except ValueError:
@@ -71,6 +97,7 @@ with open(csv_file, 'r', encoding='utf-8') as file:
             SparkApi.answer=""
             loss(label_score=label_score,score=score,i=i,wrong=wrong)
             swanlab.log({"wrong_time":wrong})
+            swanlab.log({"Lwrong_time":LWrong})
             # time.sleep(1)
             
 
