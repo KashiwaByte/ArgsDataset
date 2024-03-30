@@ -2,7 +2,7 @@ import swanlab
 import csv
 import time
 
-csv_file = 'test.csv'
+csv_file = 'dev.csv'
         
 
 import SparkApi
@@ -24,7 +24,7 @@ token = 0
 AE = 0
 SE = 0
 wrong = 0
-swanlab.init(experiment_name="AQ_test_Spark")
+swanlab.init(experiment_name="AQ_dev_Spark")
 def loss(label_score,score,i,wrong):
     global AE
     global SE
