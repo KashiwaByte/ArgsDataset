@@ -27,6 +27,9 @@ LAE = 0
 LSE = 0
 LWrong = 0
 wrong = 0
+tiny_count =0
+middle_count = 0
+big_count = 0
 swanlab.init(experiment_name="AQ_Ltest_Spark_FT2")
 
 def quality_type(score):
@@ -42,8 +45,17 @@ def loss(label_score,score,i,wrong):
     global SE
     global LAE
     global LSE
+    global tiny_count
+    global middle_count
+    global big_count
     swanlab.log({"lable_score":label_score,"score":score})
     MAE_loss = abs(float(label_score)-float(score))
+    if MAE_loss<=0.1:
+        tiny_count+=1
+    elif  0.1<MAE_loss<=0.2:
+        middle_count+=1
+    else :
+        big_count+=1
     LAE_loss =abs(quality_type(label_score)-quality_type(score))
     AE += MAE_loss
     LAE += LAE_loss
@@ -59,8 +71,9 @@ def loss(label_score,score,i,wrong):
     MLSE = LSE/(i+1-wrong)
     RMSE = MSE**0.5
     RMLSE = MLSE**0.5
+    swanlab.log({"tiny_count":tiny_count,"middle_count":middle_count,"big_count":big_count})
     swanlab.log({"MSE":MSE})
-    swanlab.log({"MSE":MLSE})
+    swanlab.log({"MLSE":MLSE})
     swanlab.log({"RMSE":RMSE})
     swanlab.log({"RMLSE":RMLSE})
     
