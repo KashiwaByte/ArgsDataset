@@ -20,7 +20,7 @@ middle_count = 0
 big_count = 0
 LWrong = 0
 
-swanlab.init(experiment_name="AQ_en_Ltest_PD")
+swanlab.init(experiment_name="AQ_en_LCtest_PD")
 
 def quality_type(score):
     if float(score)<=0.3:
@@ -40,6 +40,12 @@ def loss(label_score,score,i):
     global big_count
     swanlab.log({"lable_score":label_score,"score":score})
     MAE_loss = abs(float(label_score)-float(score))
+    if MAE_loss<=0.1:
+        tiny_count+=1
+    elif  0.1<MAE_loss<=0.2:
+        middle_count+=1
+    else :
+        big_count+=1
     LAE_loss =abs(quality_type(label_score)-quality_type(score))
     AE += MAE_loss
     LAE += LAE_loss

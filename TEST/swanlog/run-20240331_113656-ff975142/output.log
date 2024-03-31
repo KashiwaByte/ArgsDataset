@@ -1,0 +1,5 @@
+SwanLab INFO [2024-03-31 11:36:57,410] Experiment AQ_en_LCdev_PD_Mar31_11-36-56 has been registered.
+SwanLab INFO [2024-03-31 11:36:57,412] Run data will be saved locally in C:\Users\94427\kashiwa\ArgsDataset\TEST\swanlog\run-20240331_113656-ff975142
+SwanLab INFO [2024-03-31 11:36:57,413] Experiment_name: AQ_en_LCdev_PD_Mar31_11-36-56
+SwanLab INFO [2024-03-31 11:36:57,413] Run `swanlab watch` to view SwanLab Experiment Dashboard
+SwanLab INFO [2024-03-31 14:57:24,990] The current experiment AQ_en_LCdev_PD_Mar31_11-36-56 has been completed, SwanLab will close it automatically
