@@ -37,3 +37,24 @@ MACE-P(MACE Probability):MACE-P适用于需要发现“真实”二元标签的�
 BERT-Finetune(以下简称BERT-FT)。该方法对BERT的预训练模型进行微调。BERT10的官方代码库支持将微调应用于分类任务，通过在BERT模型的最后一层的[CLS]标记上应用线性层，然后通过softmax层传递。前面层的权重使用BERT的预训练模型进行初始化，然后整个网络在新数据上进行训练。为了将微调过程适应于回归任务，执行以下操作：(1)将标签类型更改为表示实数值而不是整数；(2)用sigmoid函数替换softmax层，以支持范围在[0,1]内的单个输出值；(3)修改损失函数，计算logits与标签之间的均方误差。
 
 BERT-FT_TOPIC。我们还评估了将主题添加到BERT-FT输入中的效果。主题与参数连接在一起，用[SEP]分隔符分隔，并像BERT-FT一样进行微调。
+
+
+# 微调LLM
+试着通过微调LLM来实现评分系统。主要和英文数据集的Project Debater做对比，对比指标为：
+- 原始分数与标签分数MAE， MSE， RMSE。
+- 将0到0.3定义为低质量类型，值为-1，0.3到0.7为中等质量类型，值为0.7到1为高质量类型，值为1。计算这种情况下的MLAE, MLSE, RMLSE和错误分类数Wrong_time。
+- 将差距在0.1之内的算作小误差，0.2到0.1的为中等误差，0.2以上的为大误差，计算三类误差的数量 
+
+## 商业大模型
+微调了3个epoch的GPT-3.5-turbo，可能是因为轮数太少效果差Project Debater很多。
+
+微调了16个epoch的Spark-3.0，效果非常好，中文方面远超，几乎与Project Debater的英文方面相差无几，可惜会有8%左右概率的敏感词问题
+![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240401202412.png)
+
+![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240401202343.png)
+
+
+![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240401202510.png)
+## 开源大模型
+试着微调了7B的intern2，效果完全不行。
+
