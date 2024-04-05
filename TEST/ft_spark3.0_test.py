@@ -2,7 +2,7 @@ import swanlab
 import csv
 import time
 
-csv_file = 'dev.csv'
+csv_file = 'en_test.csv'
         
 
 import SparkApi
@@ -30,7 +30,7 @@ wrong = 0
 tiny_count =0
 middle_count = 0
 big_count = 0
-swanlab.init(experiment_name="AQ_LCdev_Spark_FT2")
+swanlab.init(experiment_name="AQ_LCentest_Spark_FT2")
 
 def quality_type(score):
     if float(score)<=0.3:
