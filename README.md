@@ -48,7 +48,7 @@ BERT-FT_TOPIC。我们还评估了将主题添加到BERT-FT输入中的效果。
 ## 商业大模型
 微调了3个epoch的GPT-3.5-turbo，可能是因为轮数太少效果差Project Debater很多。
 
-微调了16个epoch的Spark-3.0，效果非常好，中文方面远超，几乎与Project Debater的英文方面相差无几，可惜会有8%左右概率的敏感词问题
+微调了16个epoch的Spark-3.0，效果非常好，中文方面远超，几乎与Project Debater的英文方面相差无几，可惜会有8%左右概率的敏感词问题.Spark-3.0微调的英文效果也与PD相差无几，而且几乎不会出现敏感词问题。
 ![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240401202412.png)
 
 ![image.png](https://kashiwa-pic.oss-cn-beijing.aliyuncs.com/20240401202343.png)
